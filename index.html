@@ -544,6 +544,7 @@ let scenes = [];
 
 const miniGames = [
     "https://pgbsp.github.io/springfield-rifle/",
+    "https://pgbsp.github.io/prairie-grove-civilian-loyalties/",
     "https://pgbsp.github.io/haversack-challenge/",
     "https://pgbsp.github.io/pg-spycraft/"
 ];
@@ -891,11 +892,6 @@ function renderRoute(){
 
 function renderScene(){
 
-    if (current >= scenes.length) {
-        ending();
-        return;
-    }
-
     const s = scenes[current];
 
     document.getElementById("sceneDate")
@@ -943,50 +939,69 @@ function launchMiniGame() {
     const gameIndex =
         current % miniGames.length;
 
-    sessionStorage.setItem("returnToStory", "true");
-    sessionStorage.setItem("currentScene", current + 1);
-    sessionStorage.setItem("storySide", side);
-    sessionStorage.setItem("storyRegiment", regiment);
+    sessionStorage.setItem(
+        "returnToStory",
+        "true"
+    );
+
+    sessionStorage.setItem(
+        "currentScene",
+        current + 1
+    );
 
     window.location.href =
         miniGames[gameIndex];
+    sessionStorage.setItem("side", side);
+    sessionStorage.setItem("regiment", regiment);
+    sessionStorage.setItem("scene", current + 1);
+
+    window.location.href =
+    miniGames[current];
+    );
 }
 
 function checkForReturn() {
-    if (sessionStorage.getItem("returnToStory") !== "true") {
-        return;
-    }
 
-    const savedSide = sessionStorage.getItem("storySide");
-    const savedRegiment = sessionStorage.getItem("storyRegiment");
+    const savedSide =
+        sessionStorage.getItem("side");
 
-    if (!regimentGroups[savedSide]?.includes(savedRegiment)) {
-        sessionStorage.removeItem("returnToStory");
-        sessionStorage.removeItem("currentScene");
-        sessionStorage.removeItem("storySide");
-        sessionStorage.removeItem("storyRegiment");
-        return;
-    }
+    const savedRegiment =
+        sessionStorage.getItem("regiment");
+
+    const savedScene =
+        sessionStorage.getItem("scene");
+
+    if (!savedRegiment) return;
 
     side = savedSide;
     regiment = savedRegiment;
+    current = Number(savedScene);
+
     scenes = createStory(regiment);
-    current = Number(sessionStorage.getItem("currentScene")) || 0;
-    current = Math.max(0, Math.min(current, scenes.length));
 
-    sessionStorage.removeItem("returnToStory");
-    sessionStorage.removeItem("currentScene");
-    sessionStorage.removeItem("storySide");
-    sessionStorage.removeItem("storyRegiment");
+    document
+        .getElementById("startScreen")
+        .classList.add("hidden");
 
-    document.getElementById("startScreen").classList.add("hidden");
-    document.getElementById("app").classList.remove("hidden");
-    document.getElementById("unitSide").textContent = side;
-    document.getElementById("unitRegiment").textContent = regiment;
-    renderScene();
+    document
+        .getElementById("app")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("unitSide")
+        .textContent = side;
+
+    document
+        .getElementById("unitRegiment")
+        .textContent = regiment;
+
+    if (current >= scenes.length) {
+        ending();
+    } else {
+        renderScene();
+    }
 }
 
-window.addEventListener("pageshow", checkForReturn);
 function launchBattle() {
 
     if (

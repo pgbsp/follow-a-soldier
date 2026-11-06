@@ -936,46 +936,34 @@ function renderScene(){
 
 function launchMiniGame() {
 
-    const gameIndex =
-        current % miniGames.length;
+    const gameIndex = current % miniGames.length;
 
-    sessionStorage.setItem(
-        "returnToStory",
-        "true"
-    );
-
-    sessionStorage.setItem(
-        "currentScene",
-        current + 1
-    );
-
-    window.location.href =
-        miniGames[gameIndex];
     sessionStorage.setItem("side", side);
     sessionStorage.setItem("regiment", regiment);
-    sessionStorage.setItem("scene", current + 1);
+    sessionStorage.setItem("scene", String(current + 1));
 
-    window.location.href =
-    miniGames[current];
-    );
+    window.location.href = miniGames[gameIndex];
 }
 
 function checkForReturn() {
 
-    const savedSide =
-        sessionStorage.getItem("side");
+    const savedSide = sessionStorage.getItem("side");
+    const savedRegiment = sessionStorage.getItem("regiment");
+    const savedScene = sessionStorage.getItem("scene");
+    const savedSceneNumber = Number(savedScene);
 
-    const savedRegiment =
-        sessionStorage.getItem("regiment");
-
-    const savedScene =
-        sessionStorage.getItem("scene");
-
-    if (!savedRegiment) return;
+    if (
+        !Object.prototype.hasOwnProperty.call(regimentGroups, savedSide) ||
+        !regimentGroups[savedSide].includes(savedRegiment) ||
+        !Number.isInteger(savedSceneNumber) ||
+        savedSceneNumber < 0
+    ) {
+        return;
+    }
 
     side = savedSide;
     regiment = savedRegiment;
-    current = Number(savedScene);
+    current = savedSceneNumber;
 
     scenes = createStory(regiment);
 

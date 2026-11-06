@@ -542,6 +542,12 @@ let regiment = "";
 let current = 0;
 let scenes = [];
 
+const miniGames = [
+    "https://pgbsp.github.io/springfield-rifle/",
+    "https://pgbsp.github.io/haversack-challenge/",
+    "https://pgbsp.github.io/pg-spycraft/"
+];
+
 /* =================================== */
 /* SIDE SELECTION */
 /* =================================== */
@@ -885,6 +891,11 @@ function renderRoute(){
 
 function renderScene(){
 
+    if (current >= scenes.length) {
+        ending();
+        return;
+    }
+
     const s = scenes[current];
 
     document.getElementById("sceneDate")
@@ -919,26 +930,63 @@ function renderScene(){
 
         btn.textContent = choice;
 
-        btn.onclick=()=>{
-
-            current++;
-
-            if(current < scenes.length){
-
-                renderScene();
-
-            }else{
-
-                ending();
-            }
-
-        };
+        btn.onclick = () => { launchMiniGame(); };
 
         choices.appendChild(btn);
 
     });
 
 }
+
+function launchMiniGame() {
+
+    const gameIndex =
+        current % miniGames.length;
+
+    sessionStorage.setItem("returnToStory", "true");
+    sessionStorage.setItem("currentScene", current + 1);
+    sessionStorage.setItem("storySide", side);
+    sessionStorage.setItem("storyRegiment", regiment);
+
+    window.location.href =
+        miniGames[gameIndex];
+}
+
+function checkForReturn() {
+    if (sessionStorage.getItem("returnToStory") !== "true") {
+        return;
+    }
+
+    const savedSide = sessionStorage.getItem("storySide");
+    const savedRegiment = sessionStorage.getItem("storyRegiment");
+
+    if (!regimentGroups[savedSide]?.includes(savedRegiment)) {
+        sessionStorage.removeItem("returnToStory");
+        sessionStorage.removeItem("currentScene");
+        sessionStorage.removeItem("storySide");
+        sessionStorage.removeItem("storyRegiment");
+        return;
+    }
+
+    side = savedSide;
+    regiment = savedRegiment;
+    scenes = createStory(regiment);
+    current = Number(sessionStorage.getItem("currentScene")) || 0;
+    current = Math.max(0, Math.min(current, scenes.length));
+
+    sessionStorage.removeItem("returnToStory");
+    sessionStorage.removeItem("currentScene");
+    sessionStorage.removeItem("storySide");
+    sessionStorage.removeItem("storyRegiment");
+
+    document.getElementById("startScreen").classList.add("hidden");
+    document.getElementById("app").classList.remove("hidden");
+    document.getElementById("unitSide").textContent = side;
+    document.getElementById("unitRegiment").textContent = regiment;
+    renderScene();
+}
+
+window.addEventListener("pageshow", checkForReturn);
 function launchBattle() {
 
     if (
@@ -999,6 +1047,7 @@ Select Another Regiment
 }
 
 /* =================================== */
+checkForReturn();
 
 </script>
 

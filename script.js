@@ -84,7 +84,7 @@ return [
 date:"December 3, 1862",
 location:"Springfield, Missouri",
 title:"Moving Out",
-text:"Without much warning, you hear that you are to move south to Arkansas."
+text:"Without much warning, you hear that you are to move south to Arkansas.",
 
 context:"After receiving requests for reinforcements from Gen. James Blunt, Gen. Francis Herron ordered his division to march from Springfield, Missouri, towards Fayetteville.",
 
@@ -540,4 +540,5 @@ Select Another Regiment
 
 /* =================================== */
 checkForReturn();
+
 

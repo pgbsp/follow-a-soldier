@@ -26,9 +26,9 @@ let current = 0;
 let scenes = [];
 
 const miniGames = [
-    "https://pgbsp.github.io/springfield-rifle/",
-    "https://pgbsp.github.io/prairie-grove-civilian-loyalties/",
     "https://pgbsp.github.io/haversack-challenge/",
+    "https://pgbsp.github.io/prairie-grove-civilian-loyalties/",
+    "https://pgbsp.github.io/springfield-rifle/",
     "https://pgbsp.github.io/pg-spycraft/"
 ];
 
@@ -83,30 +83,26 @@ return [
 {
 date:"December 3, 1862",
 location:"Springfield, Missouri",
-title:"On the March",
-text:veteran
-?
-"Without much warning, you hear that you are to move south to Arkansas. You gather up as many of your belongings as you can and fall in."
-:
-"Many soldiers are relatively new to campaigning. As the column leaves Springfield, excitement and uncertainty travel side-by-side.",
+title:"Moving Out",
+text:"Without much warning, you hear that you are to move south to Arkansas."
 
-context:"After receiving requests for reinforcements from Gen. James Blunt, Gen. Francis Herron ordered his division to march from Springfield, Missouri, toward Fayetteville.",
+context:"After receiving requests for reinforcements from Gen. James Blunt, Gen. Francis Herron ordered his division to march from Springfield, Missouri, towards Fayetteville.",
 
 marker:{left:"60%",top:"30%"},
 
 choices:[
-"Fall in with the head of the column",
-"Walk alongside the wagon train"
+"Gather up as many of your belongings as you can.",
+"Fall in as fast as you can."
 ]
 },
 
 {
 date:"December 5, 1862",
-location:"Arkansas Road",
-title:"Days on the March",
-text:"Cold weather, muddy roads, and long hours make progress difficult. Stories, songs, and conversation help pass the miles.",
+location:"Missouri-Arkansas Border",
+title:"Cold and Tired",
+text:"You've been on the march for miles; so many miles that you've lost count.  The column is drifting, with some men wandering off in search of better food. You figure you should do the same.  You look for a house that might welcome a Union soldier.",
 
-context:"For most Civil War soldiers, marching consumed far more time than combat.",
+context:"Soldiers would often try to stop in the homes of civilians to get a home-cooked meal. Usually, soldiers would pay the family a few dollars for food and lodging.",
 
 marker:{left:"35%",top:"68%"},
 

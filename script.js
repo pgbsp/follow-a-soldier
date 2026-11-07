@@ -28,8 +28,8 @@ let scenes = [];
 const miniGames = [
     "https://pgbsp.github.io/haversack-challenge/",
     "https://pgbsp.github.io/prairie-grove-civilian-loyalties/",
-    "https://pgbsp.github.io/springfield-rifle/",
-    "https://pgbsp.github.io/pg-spycraft/"
+    "https://pgbsp.github.io/pg-spycraft/",
+    "https://pgbsp.github.io/springfield-rifle/"
 ];
 
 /* =================================== */

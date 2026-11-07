@@ -107,40 +107,38 @@ context:"Soldiers would often try to stop in the homes of civilians to get a hom
 marker:{left:"35%",top:"68%"},
 
 choices:[
-"Share news from the road",
-"Keep your attention on the march"
+"Stop at a friendly-looking house",
+"Keep it moving. You'll sleep on the ground if you have to."
 ]
 },
 
 {
-date:"December 7, 1862",
-location:"Near Prairie Grove",
-title:"The Sound of Cannon Fire",
-text:"Distant artillery can be heard ahead. Officers encourage the men forward, knowing a major engagement may already be underway.",
+date:"December 6, 1862",
+location:"Fayetteville",
+title:"The Still of the Night",
+text:"You've been on the march for three days.  You've traveled 112 miles. You sleep for an hour before you're marching again. A cavalry man approaches yoy, saying he needs help decoding an intercepted message.",
 
-context:"Many units hurried toward Prairie Grove after hearing reports of fighting.",
+context:"Many of the soldiers in Herron's army got little or no sleep throughout their march.",
 
-marker:{left:"60%",top:"50%"},
+marker:{left:"30%",top:"74%"},
 
 choices:[
-"Stay close to your company",
-"Watch the countryside as you march"
+"Help him decode the message.",
 ]
 },
 
 {
 date:"December 7, 1862",
-location:"Prairie Grove",
+location:"Illinois River",
 title:"Arrival",
-text:"After days on the road, the regiment finally nears Prairie Grove. The sounds of battle carry across the landscape.",
+text:"You're exhausted. You ford the river, dodging Confederate shells all the way. You know you only have a few moments before you'll be sent up the ridge.",
 
-context:"Some regiments arrived after lengthy marches and entered the campaign already exhausted.",
+context:"Accounts from the Battle of Prairie Grove say that some men were so exhausted from the march that they passed out from exhaustion on the field.",
 
-marker:{left:"85%",top:"30%"},
+marker:{left:"29%",top:"79%"},
 
 choices:[
-"Await further orders",
-"Look toward the ridge ahead"
+"Get ready.",
 ]
 }
 ];

@@ -509,18 +509,18 @@ function launchBattle() {
 function ending(){
 
 document.getElementById("sceneDate")
-.textContent="Journey Complete";
+.textContent="The End";
 
 document.getElementById("sceneTitle")
-.textContent="Arrival at Prairie Grove";
+.textContent="To Battle";
 
 document.getElementById("sceneText")
 .textContent=
-"Your journey to Prairie Grove is complete. Like most Civil War soldiers, much of your experience involved marching, waiting, uncertainty, and following orders. The roads leading to Prairie Grove shaped the battle just as surely as the fighting itself.";
+"The battle has begun. You must now try to win it.";
 
 document.getElementById("contextText")
 .textContent=
-"Campaigns were won and lost through movement, logistics, communication, and endurance long before shots were fired.";
+"The Confederate Army started the battle with strong positioning and superior numbers, but lacked supplies and a well-trained force. Herron's division was well-supplied but exhausted from their march. Blunt's division spent much of the day trying to find the battlefield.";
 
 document.getElementById("choices")
 .innerHTML=

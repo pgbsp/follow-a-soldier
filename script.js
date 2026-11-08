@@ -197,7 +197,7 @@ location:"Rhea's Mill",
 title:"A Moment's Rest",
 text:"You all stop for a moment at Rhea's Mill. Some men take naps, others brew coffee. You notice a Confederate scout in the back of the column, taken prisoner. He has a piece of paper in his pocket.",
 
-context:"Many soldiers understood the battle only through sounds carried on the wind.",
+context:"General Blunt wanted to strike the Confederates from their rear; but his cavalry commander took the wrong route, leading the division to Rhea's Mill instead.",
 
 marker:{left:"62%",top:"48%"},
 
@@ -212,7 +212,7 @@ location:"Hilltop",
 title:"To Battle",
 text:"The sound of cannon fire grows louder and louder. You can see a large pillar of smoke rising above the terrain. Soon, the battle hoves into your view. You only have a minute before you'll be given instructions.",
 
-context:"Speed of movement often influenced where regiments arrived and when they could be committed.",
+context:"Blunt's division deployed all of their force within half an hour of arriving on the battlefield.",
 
 marker:{left:"82%",top:"30%"},
 

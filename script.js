@@ -86,13 +86,13 @@ location:"Springfield, Missouri",
 title:"Moving Out",
 text:"Without much warning, you hear that you are to move south to Arkansas.",
 
-context:"After receiving requests for reinforcements from Gen. James Blunt, Gen. Francis Herron ordered his division to march from Springfield, Missouri, towards Fayetteville.",
+context:"After receiving requests for reinforcements from General James Blunt, General Francis Herron ordered his division to march from Springfield, Missouri, towards Fayetteville.",
 
 marker:{left:"60%",top:"30%"},
 
 choices:[
-"Gather up as many of your belongings as you can.",
-"Fall in as fast as you can."
+"Gather up as many of your belongings as you can",
+"Fall in as fast as you can"
 ]
 },
 
@@ -108,7 +108,7 @@ marker:{left:"35%",top:"68%"},
 
 choices:[
 "Stop at a friendly-looking house",
-"Keep it moving. You'll sleep on the ground if you have to."
+"Keep it moving. You'll sleep on the ground if you have to"
 ]
 },
 
@@ -123,7 +123,7 @@ context:"Many of the soldiers in Herron's army got little or no sleep throughout
 marker:{left:"30%",top:"74%"},
 
 choices:[
-"Help him decode the message.",
+"Help him decode the message",
 ]
 },
 
@@ -138,7 +138,7 @@ context:"Accounts from the Battle of Prairie Grove say that some men were so exh
 marker:{left:"29%",top:"79%"},
 
 choices:[
-"Get ready.",
+"Get ready",
 ]
 }
 ];
@@ -155,71 +155,67 @@ regiment==="1st Indian Home Guard"
 return [
 
 {
-date:"December 7, 1862",
-location:"Cane Hill",
-title:"Orders to Move",
+date:"December 6, 1862",
+location:"Newburg",
+title:"The Still of the Night",
 text:
 regiment==="1st Indian Home Guard"
 ?
-"Many soldiers reflect on protecting their homes and communities as orders arrive to move toward Prairie Grove."
-:
-"Veteran soldiers quickly prepare to move north toward the developing situation near Prairie Grove.",
+"You're about the settle down for the night.  You expect that you might be fighting soon, but you don't know when, or where. You decide to make sure you have everything you need."
 
-context:"Union units near Cane Hill were called upon to move quickly toward the battlefield.",
+context:"Soldiers in General James Blunt's division knew the Confederate Army was moving towards them, and were getting close.",
 
-marker:{left:"15%",top:"82%"},
+marker:{left:"15%",top:"85%"},
 
 choices:[
-"Keep pace with the regiment",
-"Watch the ridges for movement"
+"Check your bag",
+"You'll check in the morning"
 ]
 },
 
 {
 date:"Late Morning",
-location:"Road North",
-title:"A Rapid March",
-text:"The pace quickens. Couriers move between commands while units press northward.",
+location:"On the Road",
+title:"Quickly",
+text:"You're moving now. The pace of the whole division has quickened. You're all moving north. You're hungry. You wonder if you might be able to sneak away and find food in a house. You look for a house that seems friendly.",
 
-context:"Communication depended on mounted couriers carrying orders between commanders.",
+context:"Soldiers would often try to stop in the homes of civilians to get a home-cooked meal. Usually, soldiers would pay the family a few dollars for food and lodging.",
 
 marker:{left:"40%",top:"65%"},
 
 choices:[
 "Stay with your company",
-"Listen for news from ahead"
+"Break off to find a house"
 ]
 },
 
 {
-date:"Noon",
-location:"Prairie Grove Road",
-title:"Approaching the Battlefield",
-text:"Artillery reports become easier to hear. The march continues with little time to rest.",
+date:"Early Afternoon",
+location:"Rhea's Mill",
+title:"A Moment's Rest",
+text:"You all stop for a moment at Rhea's Mill. Some men take naps, others brew coffee. You notice a Confederate scout in the back of the column, taken prisoner. He has a piece of paper in his pocket.",
 
 context:"Many soldiers understood the battle only through sounds carried on the wind.",
 
 marker:{left:"62%",top:"48%"},
 
 choices:[
-"Focus on the march",
-"Study the landscape ahead"
+"Grab the paper",
 ]
 },
 
 {
 date:"Afternoon",
-location:"Prairie Grove",
-title:"Arrival",
-text:"The regiment reaches the vicinity of Prairie Grove after a determined movement from Cane Hill.",
+location:"Hilltop",
+title:"To Battle",
+text:"The sound of cannon fire grows louder and louder. You can see a large pillar of smoke rising above the terrain. Soon, the battle hoves into your view. You only have a minute before you'll be given instructions.",
 
 context:"Speed of movement often influenced where regiments arrived and when they could be committed.",
 
 marker:{left:"82%",top:"30%"},
 
 choices:[
-"Remain with your regiment",
-"Wait for new instructions"
+"Get ready",
 ]
 }
 ];

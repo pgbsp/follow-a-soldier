@@ -160,8 +160,10 @@ location:"Newburg",
 title:"The Still of the Night",
 text:
 regiment==="1st Indian Home Guard"
-
+?
 "You're about to settle down for the night. You expect that you might be fighting soon, but you don't know when or where. You decide to make sure you have everything you need."
+:
+"You're settling down for the night. You expect that you might be fighting soon, but you don't know when or where. You decide to make sure you have everything you need.",
 
 context:"Soldiers in General James Blunt's division knew the Confederate Army was moving towards them, and were getting close.",
 

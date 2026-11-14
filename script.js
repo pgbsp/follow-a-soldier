@@ -14,8 +14,8 @@ Union:[
 Confederate:[
 "34th Arkansas Infantry",
 "22nd Arkansas Infantry",
-"10th Missouri Cavalry",
-"Blocher's Battery"
+"28th Arkansas Infantry",
+"Hawthorn's Brigade"
 ]
 
 };

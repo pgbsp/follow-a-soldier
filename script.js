@@ -75,9 +75,6 @@ regiment==="20th Wisconsin Infantry" ||
 regiment==="19th Iowa Infantry"
 ){
 
-const veteran =
-regiment==="19th Iowa Infantry";
-
 return [
 
 {
@@ -455,6 +452,8 @@ function checkForReturn() {
         .textContent = regiment;
 
     if (current === scenes.length) {
+        current = scenes.length - 1;
+        renderScene();
         ending();
     } else {
         renderScene();

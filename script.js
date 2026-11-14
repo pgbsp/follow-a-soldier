@@ -116,7 +116,7 @@ choices:[
 date:"December 6, 1862",
 location:"Fayetteville",
 title:"The Still of the Night",
-text:"You've been on the march for three days.  You've traveled 112 miles. You sleep for an hour before you're marching again. A cavalry man approaches yoy, saying he needs help decoding an intercepted message.",
+text:"You've been on the march for three days.  You've traveled 112 miles. You sleep for an hour before you're marching again. A cavalry man approaches you, saying he needs help decoding an intercepted message.",
 
 context:"Many of the soldiers in Herron's army got little or no sleep throughout their march.",
 
@@ -229,79 +229,74 @@ choices:[
 return [
 
 {
-date:"December 7, 1862",
+date:"Morning: December 7, 1862",
 location:"Morrow",
 title:"Breaking Camp",
 text:
 regiment==="Hawthorn's Brigade"
 ?
-"Battery crews spend the morning preparing horses, limbers, guns, and ammunition wagons for movement."
+"It's early in the morning; still pitch black. You're told that you're moving out, and that you might be fighting very soon. You decide to make sure you have everything you need."
 :
 regiment==="28th Arkansas Infantry"
 ?
-"Mounted troopers move between units carrying information and observing activity along the roads."
+"It's early in the morning; still pitch black. You're told that you're moving out, and that you might be fighting very soon. You decide to make sure you have everything you need."
 :
 regiment==="34th Arkansas Infantry"
 ?
-"Many soldiers know the countryside well and wonder what lies ahead for their home state."
+"It's early in the morning; still pitch black. You're told that you're moving out, and that you might be fighting very soon. You decide to make sure you have everything you need.",
 :
-"Veteran soldiers quietly begin another difficult winter march.",
-
-context:"Confederate forces moved through the region attempting to concentrate before the battle.",
+context:"The Confederate Army, led by General Thomas Hindman, spent the night at the Morrow House on December 6, 1862. They began to move north at 4:00 AM on December 7, expecting to collide with Union forces led by General James Blunt.",
 
 marker:{left:"82%",top:"20%"},
 
 choices:[
-"Listen for news from ahead",
-"Focus on the miles ahead"
+"Check your bag",
 ]
 },
 
 {
-date:"Midday",
-location:"Country Roads",
+date:"Dawn",
+location:"Cove Creek Road",
 title:"On the March",
-text:"Hours pass as columns continue across the Arkansas countryside.",
+text:"You've been marching on the double quick for several miles. You're tired and hungry. You wonder if you might be able to sneak away and find breakfast in a nearby house.",
 
-context:"Road conditions often determined how quickly entire armies could move.",
+context:"Soldiers would often try to stop in the homes of civilians to get a home-cooked meal. Usually, soldiers would pay the family a few dollars for food and lodging.",
 
 marker:{left:"68%",top:"38%"},
 
 choices:[
-"Keep step with the column",
-"Observe the countryside"
+"Stay with the column",
+"Break away to find a house"
 ]
 },
 
 {
-date:"Afternoon",
-location:"Approaching Prairie Grove",
-title:"Reports from the Front",
-text:"Word travels through the marching columns that fighting may already have begun.",
+date:"Early Morning",
+location:"Up the Road",
+title:"Resting for a Moment",
+text:"You and the men around you stop for a moment to rest. You notice that a Federal courier, taken prisoner, is inspecting a piece of paper. You walk over and take the paper.",
 
-context:"Information was frequently delayed, incomplete, or inaccurate during Civil War campaigns.",
+context:"Both armies had to rely on incomplete, unreliable, or dated information in trying to prepare for battle.",
 
 marker:{left:"52%",top:"55%"},
 
 choices:[
-"Stay with your comrades",
-"Watch the road ahead"
+"Read the paper",
 ]
 },
 
 {
-date:"Late Afternoon",
-location:"Prairie Grove",
-title:"Journey Complete",
-text:"After a demanding march, the regiment reaches the area around Prairie Grove.",
+date:"10:00 AM",
+location:"The Ridge",
+title:"Noises by the River",
+text:"You begin to hear the sounds of a force approaching at the Illinois River. The artillery opens up on them. You know it won't be long before the fighting begins. You decide to make sure you are ready.",
 
-context:"Many soldiers arrived tired from travel before facing the realities of battle.",
+context:"The Confederate assumed a defensive position along the ridge by the Borden House, and waited for Federal forces to arrive.",
 
 marker:{left:"30%",top:"72%"},
 
 choices:[
-"Await new orders",
-"Take in the scene around you"
+"Check your rifle",
 ]
 }
 ];

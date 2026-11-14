@@ -226,20 +226,18 @@ choices:[
 return [
 
 {
-    date:"Morning: December 7, 1862",
-    location:"Morrow",
-    title:"Breaking Camp",
+date:"Morning: December 7, 1862",
+location:"Morrow",
+title:"Breaking Camp",
+text:"It's early in the morning; still pitch black. You're told that you're moving out, and that you might be fighting very soon. You decide to make sure you have everything you need.",
 
-    text:
-        "It's early in the morning; still pitch black. You're told that you're moving out, and that you might be fighting very soon. You decide to make sure you have everything you need.",
+context:"The Confederate Army, led by General Thomas Hindman, spent the night at the Morrow House on December 6, 1862. They began to move north at 4:00 AM on December 7, expecting to collide with Union forces led by General James Blunt.",
 
-    context:"The Confederate Army, led by General Thomas Hindman, spent the night at the Morrow House on December 6, 1862. They began to move north at 4:00 AM on December 7, expecting to collide with Union forces led by General James Blunt.",
+marker:{left:"82%",top:"20%"},
 
-    marker:{left:"82%",top:"20%"},
-
-    choices:[
-        "Check your bag"
-    ]
+choices:[
+"Check your bag"
+]
 },
 
 {

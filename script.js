@@ -233,11 +233,11 @@ date:"December 7, 1862",
 location:"Morrow",
 title:"Breaking Camp",
 text:
-regiment==="Blocher's Battery"
+regiment==="Hawthorn's Brigade"
 ?
 "Battery crews spend the morning preparing horses, limbers, guns, and ammunition wagons for movement."
 :
-regiment==="10th Missouri Cavalry"
+regiment==="28th Arkansas Infantry"
 ?
 "Mounted troopers move between units carrying information and observing activity along the roads."
 :

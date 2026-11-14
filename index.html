@@ -1,134 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Follow a Soldier | Battle of Prairie Grove</title>
 
-<title>Follow a Soldier | Battle of Prairie Grove</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-<!-- START SCREEN -->
-
-<div id="startScreen" class="start-screen">
-
+  <div id="startScreen" class="start-screen">
     <div class="start-card">
-
-        <h1 class="main-heading">
-            Battle of Prairie Grove
-        </h1>
-
-        <p class="intro-subtitle">
-            Follow a Soldier<br>
-            December 1862
-        </p>
-
-        <div class="section-title">
-            Choose a Side
-        </div>
-
-        <div class="side-buttons">
-
-            <button onclick="chooseSide('Union')">
-                US Army
-            </button>
-
-            <button onclick="chooseSide('Confederate')">
-                CS Army
-            </button>
-
-        </div>
-
-        <div id="regiments" class="regiment-buttons"></div>
-
+      <h1 class="main-heading">Battle of Prairie Grove</h1>
+      <p class="intro-subtitle">Follow a Soldier<br>December 1862</p>
+      <div class="section-title">Choose a Side</div>
+      <div class="side-buttons">
+        <button onclick="chooseSide('Union')">US Army</button>
+        <button onclick="chooseSide('Confederate')">CS Army</button>
+      </div>
+      <div id="regiments" class="regiment-buttons"></div>
     </div>
+  </div>
 
-</div>
-
-<!-- APP -->
-
-<div id="app" class="app hidden">
-
+  <div id="app" class="app hidden">
     <aside class="sidebar">
+      <div class="site-title">Battle of Prairie Grove</div>
+      <div class="site-subtitle">Follow a Soldier<br>December 1862</div>
 
-        <div class="site-title">
-            Battle of Prairie Grove
-        </div>
+      <div class="unit-panel">
+        <div class="label">Selected Regiment</div>
+        <div id="unitSide"></div>
+        <div id="unitRegiment"></div>
+      </div>
 
-        <div class="site-subtitle">
-            Follow a Soldier<br>
-            December 1862
-        </div>
+      <div class="map-container">
+        <img src="images/prairie-grove-campaign-map.jpg" alt="Campaign map">
+        <div id="marker" class="marker"></div>
+      </div>
 
-        <div class="unit-panel">
-
-            <div class="label">
-                Selected Regiment
-            </div>
-
-            <div id="unitSide"></div>
-            <div id="unitRegiment"></div>
-
-        </div>
-
-        <div class="map-container">
-
-            <img src="images/prairie-grove-campaign-map.jpg"
-                 alt="Campaign map">
-
-            <div id="marker" class="marker"></div>
-
-        </div>
-
-        <div class="route-panel">
-
-            <div class="label">
-                Campaign Route
-            </div>
-
-            <div id="routeStops"></div>
-
-        </div>
-
+      <div class="route-panel">
+        <div class="label">Campaign Route</div>
+        <div id="routeStops"></div>
+      </div>
     </aside>
 
     <main class="content">
-
-        <div class="story-card">
-
-            <div id="sceneDate" class="scene-date"></div>
-
-            <div id="sceneTitle" class="scene-title"></div>
-
-            <div id="sceneText" class="scene-text"></div>
-
-            <div class="context-box">
-
-                <div class="context-title">
-                    Historical Context
-                </div>
-
-                <div id="contextText"></div>
-
-            </div>
-
-            <div id="choices" class="choices"></div>
-
+      <div class="story-card">
+        <div id="sceneDate" class="scene-date"></div>
+        <div id="sceneTitle" class="scene-title"></div>
+        <div id="sceneText" class="scene-text"></div>
+        <div class="context-box">
+          <div class="context-title">Historical Context</div>
+          <div id="contextText"></div>
         </div>
-
+        <div id="choices" class="choices"></div>
+      </div>
     </main>
+  </div>
 
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+

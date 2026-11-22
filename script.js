@@ -164,7 +164,7 @@ regiment==="1st Indian Home Guard"
 
 context:"Soldiers in General James Blunt's division knew the Confederate Army was moving towards them, and were getting close.",
 
-marker:{left:"15%",top:"85%"},
+marker:{left:"85%",top:"22%"},
 
 choices:[
 "Check your bag",

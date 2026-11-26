@@ -233,7 +233,7 @@ text:"It's early in the morning; still pitch black. You're told that you're movi
 
 context:"The Confederate Army, led by General Thomas Hindman, spent the night at the Morrow House on December 6, 1862. They began to move north at 4:00 AM on December 7, expecting to collide with Union forces led by General James Blunt.",
 
-marker:{left:"82%",top:"20%"},
+marker:{left:"25%",top:"90%"},
 
 choices:[
 "Check your bag"
@@ -248,7 +248,7 @@ text:"You've been marching on the double quick for several miles. You're tired a
 
 context:"Soldiers would often try to stop in the homes of civilians to get a home-cooked meal. Usually, soldiers would pay the family a few dollars for food and lodging.",
 
-marker:{left:"68%",top:"38%"},
+marker:{left:"25%",top:"88%"},
 
 choices:[
 "Stay with the column",
@@ -264,7 +264,7 @@ text:"You and the men around you stop for a moment to rest. You notice that a Fe
 
 context:"Both armies had to rely on incomplete, unreliable, or dated information in trying to prepare for battle.",
 
-marker:{left:"52%",top:"55%"},
+marker:{left:"25%",top:"86%"},
 
 choices:[
 "Read the paper",
@@ -279,7 +279,7 @@ text:"You begin to hear the sounds of a force approaching at the Illinois River.
 
 context:"The Confederate assumed a defensive position along the ridge by the Borden House, and waited for Federal forces to arrive.",
 
-marker:{left:"30%",top:"72%"},
+marker:{left:"25%",top:"84%"},
 
 choices:[
 "Check your rifle",

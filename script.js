@@ -164,7 +164,7 @@ regiment==="1st Indian Home Guard"
 
 context:"Soldiers in General James Blunt's division knew the Confederate Army was moving towards them, and were getting close.",
 
-marker:{left:"85%",top:"22%"},
+marker:{left:"17%",top:"85%"},
 
 choices:[
 "Check your bag",
@@ -180,7 +180,7 @@ text:"You're moving now. The pace of the whole division has quickened. You're al
 
 context:"Soldiers would often try to stop in the homes of civilians to get a home-cooked meal. Usually, soldiers would pay the family a few dollars for food and lodging.",
 
-marker:{left:"40%",top:"65%"},
+marker:{left:"17%",top:"83%"},
 
 choices:[
 "Stay with your company",
@@ -196,7 +196,7 @@ text:"You all stop for a moment at Rhea's Mill. Some men take naps, others brew 
 
 context:"General Blunt wanted to strike the Confederates from their rear; but his cavalry commander took the wrong route, leading the division to Rhea's Mill instead.",
 
-marker:{left:"62%",top:"48%"},
+marker:{left:"17%",top:"80%"},
 
 choices:[
 "Grab the paper",
@@ -211,7 +211,7 @@ text:"The sound of cannon fire grows louder and louder. You can see a large pill
 
 context:"Blunt's division deployed all of their force within half an hour of arriving on the battlefield.",
 
-marker:{left:"82%",top:"30%"},
+marker:{left:"19%",top:"82%"},
 
 choices:[
 "Get ready",

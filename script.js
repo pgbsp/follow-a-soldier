@@ -85,7 +85,7 @@ text:"Without much warning, you hear that you are to move south to Arkansas.",
 
 context:"After receiving requests for reinforcements from General James Blunt, General Francis Herron ordered his division to march from Springfield, Missouri, towards Fayetteville.",
 
-marker:{left:"60%",top:"30%"},
+marker:{left:"35%",top:"43%"},
 
 choices:[
 "Gather up as many of your belongings as you can",
@@ -101,7 +101,7 @@ text:"You've been on the march for miles; so many miles that you've lost count. 
 
 context:"Soldiers would often try to stop in the homes of civilians to get a home-cooked meal. Usually, soldiers would pay the family a few dollars for food and lodging.",
 
-marker:{left:"35%",top:"68%"},
+marker:{left:"35%",top:"64%"},
 
 choices:[
 "Stop at a friendly-looking house",
@@ -117,7 +117,7 @@ text:"You've been on the march for three days.  You've traveled 112 miles. You s
 
 context:"Many of the soldiers in Herron's army got little or no sleep throughout their march.",
 
-marker:{left:"30%",top:"74%"},
+marker:{left:"25%",top:"78%"},
 
 choices:[
 "Help him decode the message",
@@ -132,7 +132,7 @@ text:"You're exhausted. You ford the river, dodging Confederate shells all the w
 
 context:"Accounts from the Battle of Prairie Grove say that some men were so exhausted from the march that they passed out from exhaustion on the field.",
 
-marker:{left:"29%",top:"79%"},
+marker:{left:"20%",top:"82%"},
 
 choices:[
 "Get ready",

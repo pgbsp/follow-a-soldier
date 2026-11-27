@@ -20,6 +20,7 @@ Confederate:[
 
 };
 
+let awaitingTravel = false;
 let side = "";
 let regiment = "";
 let current = 0;
@@ -87,6 +88,8 @@ context:"After receiving requests for reinforcements from General James Blunt, G
 
 marker:{left:"35%",top:"43%"},
 
+nextStop:"Latta House",
+
 choices:[
 "Gather up as many of your belongings as you can",
 "Fall in as fast as you can"
@@ -102,6 +105,8 @@ text:"You've been on the march for miles; so many miles that you've lost count. 
 context:"Soldiers would often try to stop in the homes of civilians to get a home-cooked meal. Usually, soldiers would pay the family a few dollars for food and lodging.",
 
 marker:{left:"35%",top:"64%"},
+
+nextStop:"Schoolhouse",
 
 choices:[
 "Stop at a friendly-looking house",
@@ -119,6 +124,8 @@ context:"Many of the soldiers in Herron's army got little or no sleep throughout
 
 marker:{left:"25%",top:"78%"},
 
+nextStop:"Church",
+
 choices:[
 "Help him decode the message",
 ]
@@ -133,6 +140,8 @@ text:"You're exhausted. You ford the river, dodging Confederate shells all the w
 context:"Accounts from the Battle of Prairie Grove say that some men were so exhausted from the march that they passed out from exhaustion on the field.",
 
 marker:{left:"20%",top:"82%"},
+
+nextStop:"Morrow House",
 
 choices:[
 "Get ready",
@@ -166,6 +175,8 @@ context:"Soldiers in General James Blunt's division knew the Confederate Army wa
 
 marker:{left:"17%",top:"85%"},
 
+nextStop:"Latta House",
+
 choices:[
 "Check your bag",
 "You'll check in the morning"
@@ -181,6 +192,8 @@ text:"You're moving now. The pace of the whole division has quickened. You're al
 context:"Soldiers would often try to stop in the homes of civilians to get a home-cooked meal. Usually, soldiers would pay the family a few dollars for food and lodging.",
 
 marker:{left:"17%",top:"83%"},
+
+nextStop:"Schoolhouse",
 
 choices:[
 "Stay with your company",
@@ -198,6 +211,8 @@ context:"General Blunt wanted to strike the Confederates from their rear; but hi
 
 marker:{left:"17%",top:"80%"},
 
+nextStop:"Church",
+
 choices:[
 "Grab the paper",
 ]
@@ -212,6 +227,8 @@ text:"The sound of cannon fire grows louder and louder. You can see a large pill
 context:"Blunt's division deployed all of their force within half an hour of arriving on the battlefield.",
 
 marker:{left:"19%",top:"82%"},
+
+nextStop:"Morrow House",
 
 choices:[
 "Get ready",
@@ -233,7 +250,9 @@ text:"It's early in the morning; still pitch black. You're told that you're movi
 
 context:"The Confederate Army, led by General Thomas Hindman, spent the night at the Morrow House on December 6, 1862. They began to move north at 4:00 AM on December 7, expecting to collide with Union forces led by General James Blunt.",
 
-marker:{left:"21%",top:"90%"},
+marker:{left:"25%",top:"90%"},
+
+nextStop:"Latta House",
 
 choices:[
 "Check your bag"
@@ -248,7 +267,9 @@ text:"You've been marching on the double quick for several miles. You're tired a
 
 context:"Soldiers would often try to stop in the homes of civilians to get a home-cooked meal. Usually, soldiers would pay the family a few dollars for food and lodging.",
 
-marker:{left:"21%",top:"88%"},
+marker:{left:"25%",top:"88%"},
+
+nextStop:"Schoolhouse",
 
 choices:[
 "Stay with the column",
@@ -264,7 +285,9 @@ text:"You and the men around you stop for a moment to rest. You notice that a Fe
 
 context:"Both armies had to rely on incomplete, unreliable, or dated information in trying to prepare for battle.",
 
-marker:{left:"21%",top:"86%"},
+marker:{left:"25%",top:"86%"},
+
+nextStop:"Church",
 
 choices:[
 "Read the paper",
@@ -279,7 +302,9 @@ text:"You begin to hear the sounds of a force approaching at the Illinois River.
 
 context:"The Confederate assumed a defensive position along the ridge by the Borden House, and waited for Federal forces to arrive.",
 
-marker:{left:"21%",top:"84%"},
+marker:{left:"25%",top:"84%"},
+
+nextStop:"Morrow House",
 
 choices:[
 "Check your rifle",
@@ -382,12 +407,55 @@ function renderScene(){
 
         btn.textContent = choice;
 
-        btn.onclick = () => { launchMiniGame(); };
+	btn.onclick = () => {
+    launchMiniGame();
+};
 
-        choices.appendChild(btn);
+choices.appendChild(btn);
 
     });
 
+}
+
+function showTravelScreen() {
+
+    const destination =
+        scenes[current].nextStop || "the next stop";
+
+    document.getElementById("sceneDate")
+        .textContent = "Next Destination";
+
+    document.getElementById("sceneTitle")
+        .textContent =
+        `Proceed to ${destination}`;
+
+    document.getElementById("sceneText")
+        .textContent =
+        `Travel to ${destination}. When you arrive, press the button below to continue your story.`;
+
+    document.getElementById("contextText")
+        .textContent = "";
+
+    document.getElementById("choices")
+        .innerHTML =
+        `
+        <button onclick="arriveAtNextStop()">
+            I Am At ${destination}
+        </button>
+        `;
+}
+
+function arriveAtNextStop() {
+
+    current++;
+
+    if (current >= scenes.length) {
+
+        ending();
+        return;
+    }
+
+    renderScene();
 }
 
 function launchMiniGame() {
@@ -396,7 +464,8 @@ function launchMiniGame() {
 
     sessionStorage.setItem("side", side);
     sessionStorage.setItem("regiment", regiment);
-    sessionStorage.setItem("scene", String(current + 1));
+    sessionStorage.setItem("scene", String(current));
+	sessionStorage.setItem("awaitingTravel", "true");
 
     window.location.href = miniGames[gameIndex];
 }
@@ -406,11 +475,14 @@ function checkForReturn() {
     const savedSide = sessionStorage.getItem("side");
     const savedRegiment = sessionStorage.getItem("regiment");
     const savedScene = sessionStorage.getItem("scene");
+	const awaitingTravel =
+    	sessionStorage.getItem("awaitingTravel");
 
     // Consume the return state so reloads and "Select Another Regiment" work.
     sessionStorage.removeItem("side");
     sessionStorage.removeItem("regiment");
     sessionStorage.removeItem("scene");
+    sessionStorage.removeItem("awaitingTravel");
 
     const savedSceneNumber = Number(savedScene);
 
@@ -418,7 +490,7 @@ function checkForReturn() {
         !Object.prototype.hasOwnProperty.call(regimentGroups, savedSide) ||
         !regimentGroups[savedSide].includes(savedRegiment) ||
         !Number.isInteger(savedSceneNumber) ||
-        savedSceneNumber < 1
+        savedSceneNumber < 0
     ) {
         return;
     }
@@ -449,13 +521,25 @@ function checkForReturn() {
         .getElementById("unitRegiment")
         .textContent = regiment;
 
-    if (current === scenes.length) {
-        current = scenes.length - 1;
-        renderScene();
-        ending();
-    } else {
-        renderScene();
-    }
+    if (awaitingTravel === "true") {
+
+    renderScene();
+    showTravelScreen();
+
+    return;
+}
+
+if (current === scenes.length) {
+
+    current = scenes.length - 1;
+
+    renderScene();
+    ending();
+}
+else {
+
+    renderScene();
+}
 }
 
 function launchBattle() {
@@ -519,5 +603,3 @@ Select Another Regiment
 
 /* =================================== */
 checkForReturn();
-
-

@@ -436,13 +436,21 @@ function showTravelScreen() {
     document.getElementById("contextText")
         .textContent = "";
 
-    document.getElementById("choices")
-        .innerHTML =
-        `
-        <button onclick="arriveAtNextStop()">
-            I Am At ${destination}
-        </button>
-        `;
+    const choices =
+        document.getElementById("choices");
+
+    choices.innerHTML = "";
+
+    const btn =
+        document.createElement("button");
+
+    btn.textContent =
+        `I Am At ${destination}`;
+
+    btn.onclick = arriveAtNextStop;
+
+    choices.appendChild(btn);
+
 }
 
 function arriveAtNextStop() {
@@ -521,25 +529,20 @@ function checkForReturn() {
         .getElementById("unitRegiment")
         .textContent = regiment;
 
+    if (current === scenes.length) {
+        current = scenes.length - 1;
+        renderScene();
+        ending();
+        return;
+    }
+
     if (awaitingTravel === "true") {
+        renderScene();
+        showTravelScreen();
+        return;
+    }
 
     renderScene();
-    showTravelScreen();
-
-    return;
-}
-
-if (current === scenes.length) {
-
-    current = scenes.length - 1;
-
-    renderScene();
-    ending();
-}
-else {
-
-    renderScene();
-}
 }
 
 function launchBattle() {
@@ -603,3 +606,4 @@ Select Another Regiment
 
 /* =================================== */
 checkForReturn();
+
